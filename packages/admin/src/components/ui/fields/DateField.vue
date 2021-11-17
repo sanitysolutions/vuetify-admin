@@ -25,6 +25,7 @@ export default {
   methods: {
     dateFormatted(val) {
       if (val) {
+        val = val.substring(0,10);
         return this.$d(new Date(val), this.format);
       }
     },
