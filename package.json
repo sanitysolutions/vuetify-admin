@@ -1,41 +1,60 @@
 {
   "name": "vuetify-admin",
-  "description": "Vuetify Admin",
-  "repository": "https://github.com/sanitysolutions/vuetify-admin",
-  "author": "Adrien Beaudouin",
+  "version": "0.5.7",
+  "description": "SPA admin framework for Vue.js running on top of REST APIs, built on Vuetify",
+  "main": "dist/admin.common.js",
+  "module": "src/index.js",
+  "keywords": [
+    "admin",
+    "rest",
+    "vue",
+    "vue-admin",
+    "vue-cli",
+    "vuetify",
+    "front-end",
+    "framework"
+  ],
+  "repository": "https://github.com/okami101/vuetify-admin",
+  "author": "Adrien Beaudouin <adrien.beaudouin@outlook.com>",
   "license": "MIT",
-  "private": true,
+  "homepage": "https://www.okami101.io/vuetify-admin",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "lint": "eslint --ext .js,.vue packages/admin packages/cli"
+    "build": "vue-cli-service build --name admin --target lib src/index.js",
+    "prepublishOnly": "npm run build && node meta"
   },
+  "vetur": {
+    "tags": "dist/json/tags.json",
+    "attributes": "dist/json/attributes.json"
+  },
+  "web-types": "dist/json/web-types.json",
   "devDependencies": {
-    "@vue/cli-plugin-eslint": "^4.5.6",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "@vuepress/plugin-back-to-top": "^1.5.4",
-    "@vuepress/plugin-google-analytics": "^1.5.4",
-    "@vuepress/plugin-medium-zoom": "^1.5.4",
-    "@vuepress/plugin-pwa": "^1.5.4",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.8.1",
-    "eslint-plugin-prettier": "^3.1.3",
-    "eslint-plugin-vue": "^7.0.0",
-    "lerna": "^3.22.0",
-    "prettier": "^2.1.1",
-    "vuepress": "^1.5.4",
-    "vuepress-plugin-code-copy": "^1.0.6",
-    "vuepress-plugin-element-tabs": "^0.2.8",
-    "vuepress-plugin-sitemap": "^2.3.1"
+    "@vue/cli-plugin-babel": "^4.5.4",
+    "@vue/cli-service": "^4.5.4",
+    "ejs": "^3.1.5",
+    "globby": "^11.0.1",
+    "mkdirp": "^1.0.4",
+    "portal-vue": "^2.1.7",
+    "rimraf": "^3.0.2",
+    "vue-docgen-api": "^4.31.1",
+    "vuedraggable": "^2.24.1",
+    "vuetify": "^2.3.10",
+    "vuex": "^3.1.3"
   },
-  "workspaces": [
-    "packages/admin",
-    "packages/cli",
-    "vue-cli-base",
-    "examples/demo",
-    "examples/demo-retail",
-    "examples/tutorial",
-    "examples/api-platform",
-    "examples/laravel/admin"
-  ]
+  "peerDependencies": {
+    "portal-vue": "^2.1.7",
+    "vue": "^2.6.10",
+    "vue-i18n": "^8.20.0",
+    "vue-router": "^3.3.2",
+    "vue-template-compiler": "^2.6.11",
+    "vuedraggable": "^2.23.2",
+    "vuetify": "^2.3.7",
+    "vuex": "^3.1.3"
+  },
+  "dependencies": {
+    "@tinymce/tinymce-vue": "^3.2.2",
+    "lodash": "^4.17.15",
+    "papaparse": "^5.3.0",
+    "qs": "^6.9.4"
+  },
+  "gitHead": "5c97b6f8a148114eeacab10eaeab131cfeed71fb"
 }
