@@ -23,7 +23,9 @@
         :value="getDate"
         @change="change"
         @input="updateDate"
-      ></v-date-picker>
+      >  
+        <v-btn text color="primary" @click="clearDate" v-if="this.input">Clear</v-btn>
+      </v-date-picker>
     </v-menu>
   </div>
 </template>
@@ -46,7 +48,7 @@ export default {
     value: {
       type: String,
       default() {
-        return this.$d(new Date(), this.format);
+        return null;
       },
     },
     /**
@@ -98,6 +100,10 @@ export default {
       this.menu = false;
       this.update(val);
     },
+    clearDate(){
+      this.menu = false;
+      this.update(null);
+    }
   },
 };
 </script>

@@ -8,6 +8,7 @@
     :item-text="getItemText"
     :item-value="getItemValue"
     :items="items || choices"
+    :clearable="true"
     @change="change"
     @input="update"
   >
